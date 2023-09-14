@@ -23,4 +23,4 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN echo "service cron start && pm2 start crontab-ui --no-daemon" > /startup
 RUN chmod 755 /startup
 
-CMD [ " startup " ]
+CMD [ " /startup " ]
