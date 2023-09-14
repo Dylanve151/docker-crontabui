@@ -9,7 +9,7 @@ RUN apt-get update && \
     wget \
     curl
 
-#ENV CRON_PATH=/var/spool/cron/crontabs
+ENV CRON_PATH=/var/spool/cron/crontabs
 ENV CRON_DB_PATH=/crontab-ui-data
 ENV CRON_IN_DOCKER=true
 ENV HOST=0.0.0.0
