@@ -20,6 +20,8 @@ VOLUME ["/scripts"]
 VOLUME ["/etc/cron.d"]
 VOLUME ["/crontab-ui-data"]
 
+RUN python3 -m venv /venv
+
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN echo '#!/bin/bash \n\n\
