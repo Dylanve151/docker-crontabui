@@ -20,7 +20,12 @@ VOLUME ["/etc/cron.d"]
 VOLUME ["/crontab-ui-data"]
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN echo "service cron start && pm2 start crontab-ui --no-daemon" > /startup
+
+RUN echo '#!/bin/bash \n\n\
+service cron start \n\
+pm2 start crontab-ui --no-daemon \n\
+' > /startup
+
 RUN chmod 755 /startup
 
 CMD [ " /startup " ]
